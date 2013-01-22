@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     reloadr.start(this.data, function() {
       grunt.log.writeln('LiveReload server started');
-      grunt.log.writeln('Watching: '+self.data.join(', '));
+      grunt.log.writeln('Watching ' + grunt.file.expand(self.data).length.toString().cyan + ' files...');
     });
 
     reloadr.changed(function(filepath) {
